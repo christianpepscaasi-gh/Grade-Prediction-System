@@ -32,11 +32,15 @@ jobs:
     - name: Build EXE
       run: |
         pyinstaller --onefile --windowed \
-        --collect-all pandas \
-        --collect-all joblib \
-        --collect-all openpyxl \
-        --add-data "model/grade_model.pkl;model" \
-        app.py
+--collect-all pandas \
+--collect-all joblib \
+--collect-all openpyxl \
+--hidden-import=numpy \
+--hidden-import=pytz \
+--hidden-import=dateutil \
+--add-data "model/grade_model.pkl;model" \
+app.py
+
 
     # 5️⃣ Upload the EXE as artifact
     - name: Upload EXE Artifact
