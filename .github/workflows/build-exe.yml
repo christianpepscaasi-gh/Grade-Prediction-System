@@ -30,7 +30,7 @@ jobs:
         pyinstaller --onefile --windowed app.py --name GradeApp --collect-all pandas --collect-all joblib --collect-all openpyxl
 
     - name: Upload EXE as Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: GradeApp-exe
         path: dist/GradeApp.exe
