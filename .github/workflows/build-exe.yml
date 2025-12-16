@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # 1️⃣ Checkout the repository
+      # 1️⃣ Checkout repository
       - name: Checkout Repo
         uses: actions/checkout@v4
 
@@ -38,6 +38,8 @@ jobs:
             --hidden-import=numpy \
             --hidden-import=pytz \
             --hidden-import=dateutil \
+            --hidden-import=scipy \
+            --hidden-import=sklearn \
             --add-data "model/grade_model.pkl;model" \
             app.py
 
